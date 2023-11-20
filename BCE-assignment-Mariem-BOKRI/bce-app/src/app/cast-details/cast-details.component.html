@@ -1,0 +1,12 @@
+<div *ngIf="personDetails">
+  <h2>{{ personDetails.name }}</h2>
+  <img
+    *ngIf="personDetails.image"
+    [src]="personDetails.image.original"
+    alt="{{ personDetails.name }}"
+  />
+  <p *ngIf="personDetails.gender">Gender: {{ personDetails.gender }}</p>
+  <p>Country: {{ personDetails.country.name }}</p>
+  <p>Birthday: {{ personDetails.birthday }}</p>
+  <p *ngIf="personDetails.deathday">Deathday: {{ personDetails.deathday }}</p>
+</div>

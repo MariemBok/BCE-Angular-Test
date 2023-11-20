@@ -1,0 +1,15 @@
+<div *ngIf="episodeDetails">
+  <h2>{{ episodeDetails.name }}</h2>
+  <p>Season {{ episodeDetails.season }}, Episode {{ episodeDetails.number }}</p>
+  <p>Airdate: {{ episodeDetails.airdate }}</p>
+  <p>Airtime: {{ episodeDetails.airtime }}</p>
+  <img
+    [src]="episodeDetails.image.original"
+    alt="{{ episodeDetails.name }} Image"
+  />
+
+  <div
+    *ngIf="episodeDetails.summary"
+    [innerHTML]="episodeDetails.summary"
+  ></div>
+</div>
