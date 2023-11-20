@@ -7,11 +7,13 @@
         placeholder="Enter search query"
         class="form-control"
       />
-      <button (click)="search(searchInput.value)">Search</button>
-      <div *ngIf="searchResults">
+      <button (click)="search(searchInput.value)" class="btn btn-primary m-2">
+        Search
+      </button>
+      <div *ngIf="searchResults.length > 0">
         <h3>Search Results:</h3>
-        <ul>
-          <li *ngFor="let result of searchResults">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let result of searchResults">
             <a [routerLink]="['/details', result.show.id]">{{
               result.show.name
             }}</a>
