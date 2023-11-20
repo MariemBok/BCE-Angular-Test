@@ -14,7 +14,7 @@
         <h3>Search Results:</h3>
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let result of searchResults">
-            <a [routerLink]="['/details', result.show.id]">{{
+            <a [routerLink]="['/show', result.show.id]">{{
               result.show.name
             }}</a>
           </li>

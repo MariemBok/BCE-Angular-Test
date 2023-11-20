@@ -31,6 +31,6 @@ export class SeriesSearchComponent implements OnInit {
   }
 
   navigateToDetails(showId: number) {
-    this.router.navigate(['/details', showId]);
+    this.router.navigate(['/show', showId]);
   }
 }

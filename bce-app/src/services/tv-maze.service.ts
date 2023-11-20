@@ -18,4 +18,19 @@ export class TvMazeService {
     const url = `${this.apiUrl}/shows/${id}`;
     return this.http.get(url);
   }
+
+  getSeasons(id: number): Observable<any> {
+    const url = `${this.apiUrl}/shows/${id}/seasons`;
+    return this.http.get(url);
+  }
+
+  getEpisodes(seriesId: number): Observable<any> {
+    const url = `${this.apiUrl}/shows/${seriesId}/episodes`;
+    return this.http.get(url);
+  }
+
+  getCast(id: number): Observable<any> {
+    const url = `${this.apiUrl}/shows/${id}/cast`;
+    return this.http.get(url);
+  }
 }

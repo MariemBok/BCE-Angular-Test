@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { EpisodeDetailComponentComponent } from './episode-detail-component/episode-detail-component.component';
+import { EpisodeDetailsComponent } from './episode-details/episode-details.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { CommonModule } from '@angular/common';
     SeriesWatchComponent,
     SeriesDetailsComponent,
     CastDetailsComponent,
+    EpisodeDetailComponentComponent,
+    EpisodeDetailsComponent,
   ],
   imports: [
     BrowserModule,

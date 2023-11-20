@@ -1,1 +1,64 @@
-<p>series-details works!</p>
+<div *ngIf="seriesDetails">
+  <h2>{{ seriesDetails.name }}</h2>
+  <img
+    [src]="seriesDetails.image.medium"
+    alt="{{ seriesDetails.name }} Image"
+  />
+  <p>{{ seriesDetails.summary }}</p>
+
+  <div *ngIf="seriesDetails.genres && seriesDetails.genres.length > 0">
+    <p><strong>Genres:</strong> {{ seriesDetails.genres.join(", ") }}</p>
+  </div>
+
+  <div *ngIf="seriesDetails.rating && seriesDetails.rating.average">
+    <p><strong>Rating:</strong> {{ seriesDetails.rating.average }}/10</p>
+  </div>
+  <h3>Cast</h3>
+  <ul>
+    <li *ngFor="let actor of cast">
+      <img [src]="actor.person.image.medium" alt="{{ actor.person.name }}" />
+      <a [routerLink]="['/show', seriesId, 'cast', actor.person.id]">{{
+        actor.person.name
+      }}</a>
+    </li>
+  </ul>
+
+  <div *ngIf="seriesDetails.seasons && seriesDetails.seasons.length > 0">
+    <p><strong>Number of Seasons:</strong> {{ seriesSeasons.length }}</p>
+
+    <div *ngFor="let season of seriesSeasons">
+      <h4>Season {{ season.number }}</h4>
+
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="seasonDropdown{{ season.number }}"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Episodes
+        </button>
+        <div
+          class="dropdown-menu"
+          aria-labelledby="seasonDropdown{{ season.number }}"
+        >
+          <a
+            class="dropdown-item"
+            *ngFor="let episode of seriesEpisodes"
+            [routerLink]="[
+              '/show',
+              seriesId,
+              'episodes',
+              season.number,
+              episode.number
+            ]"
+          >
+            Episode {{ episode.number }} : {{ episode.name }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
