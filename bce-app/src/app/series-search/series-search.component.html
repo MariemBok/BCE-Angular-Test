@@ -3,10 +3,11 @@
     <div class="col-sm">
       <h2>Search for TV Shows</h2>
       <input
-        [(ngModel)]="searchQuery"
+        #searchInput
         placeholder="Enter search query"
         class="form-control"
       />
+      <button (click)="search(searchInput.value)">Search</button>
     </div>
   </div>
 </div>
