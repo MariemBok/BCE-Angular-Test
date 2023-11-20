@@ -8,6 +8,16 @@
         class="form-control"
       />
       <button (click)="search(searchInput.value)">Search</button>
+      <div *ngIf="searchResults">
+        <h3>Search Results:</h3>
+        <ul>
+          <li *ngFor="let result of searchResults">
+            <a [routerLink]="['/details', result.show.id]">{{
+              result.show.name
+            }}</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

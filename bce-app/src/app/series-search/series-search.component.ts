@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TvMazeService } from '../../services/tv-maze.service';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-series-search',
@@ -10,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class SeriesSearchComponent implements OnInit {
   searchQuery: string = 'girls';
   searchResults: any[] = [];
-  constructor(private tvMazeService: TvMazeService) {}
+  constructor(private tvMazeService: TvMazeService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -27,5 +28,9 @@ export class SeriesSearchComponent implements OnInit {
           console.error('Error fetching search results:', error);
         }
       );
+  }
+
+  navigateToDetails(showId: number) {
+    this.router.navigate(['/details', showId]);
   }
 }

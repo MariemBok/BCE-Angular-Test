@@ -10,6 +10,7 @@ import { TvMazeService } from '../services/tv-maze.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     RouterModule,
     HttpClientModule,
+    CommonModule,
   ],
   providers: [TvMazeService],
   bootstrap: [AppComponent],
